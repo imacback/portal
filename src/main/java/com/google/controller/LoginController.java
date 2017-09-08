@@ -13,7 +13,6 @@ public class LoginController {
 
     @RequestMapping("/index")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("============");
-        return null;
+        return new ModelAndView("/index.jsp");
     }
 }
