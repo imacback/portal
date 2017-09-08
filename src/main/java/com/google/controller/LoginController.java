@@ -13,6 +13,6 @@ public class LoginController {
 
     @RequestMapping("/index")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("/index.jsp");
+        return new ModelAndView("index");
     }
 }
