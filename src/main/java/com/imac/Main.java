@@ -10,8 +10,6 @@ public class Main {
 	}
 
 	public static int i = -1;
-	+了
-	+
 	public static final int A = new Random().nextInt();
 
     public static void main(String[] args) {
