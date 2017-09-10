@@ -5,7 +5,13 @@ import java.util.Random;
 
 public class Main {
 
+	static {
+		i = 100;
+	}
 
+	public static int i = -1;
+	+了
+	+
 	public static final int A = new Random().nextInt();
 
     public static void main(String[] args) {
