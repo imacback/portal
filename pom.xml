@@ -72,15 +72,15 @@
         </plugin>
 
         <!-- 修改webapp目录为WebContent -->
-        <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-war-plugin</artifactId>-->
-            <!--<configuration>-->
-                <!--&lt;!&ndash; 设置WebContent目录为Web目录 &ndash;&gt;-->
-                <!--<webappDirectory>web</webappDirectory>-->
-                <!--<warSourceDirectory>web</warSourceDirectory>-->
-            <!--</configuration>-->
-        <!--</plugin>-->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+                <!-- 设置WebContent目录为Web目录 -->
+                <webappDirectory>web</webappDirectory>
+                <warSourceDirectory>web</warSourceDirectory>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 
