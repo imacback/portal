@@ -41,7 +41,16 @@
 
   <!--&lt;!&ndash; Activate Avalon Bridge &ndash;&gt;-->
   <!--<avalon:bridge/>-->
-  <mvc:annotation-driven></mvc:annotation-driven>
+  <!--<mvc:annotation-driven>-->
+      <mvc:annotation-driven>
+          <mvc:return-value-handlers>
+          <bean name="reover" class="com.imac.json.JsonReturnHandler">
+              <!--<constructor-arg ref="messageconverters"> </constructor-arg>-->
+      </bean>
+  </mvc:return-value-handlers>
+
+<!--</mvc:annotation-driven>-->
+  </mvc:annotation-driven>
   <context:component-scan base-package="com.google"></context:component-scan>
 
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
