@@ -1,5 +1,6 @@
 package com.imac;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -18,16 +19,24 @@ public class Main {
 //		for (int i=0;;) {
 //			System.out.println(i++);
 //		}
+//
+//		Integer a = new Integer(100);
+//		Integer b = new Integer(90);
+//
+//		System.out.println(a > b);
+//
+//		Long c = 1L;
+//
+//		System.out.println(0 < c);
 
-		Integer a = new Integer(100);
-		Integer b = new Integer(90);
-
-		System.out.println(a > b);
-
-		Long c = 1L;
-
-		System.out.println(0 < c);
-    }
+		String[] array = new String[] {
+				"hello",
+				", ",
+				"world",
+		};
+		List<String> list = Arrays.asList(array);
+//		list.forEach(System.out::println);
+	}
 
 //    public String test(List<String> list) {
 //		return "";
@@ -40,6 +49,15 @@ public class Main {
 	public Integer test(List<Integer> list, int ... discounts) {
 		return 0;
 	}
+
+	//1.8编译不了
+//	public String test(List<Integer> list) {
+//		return "";
+//	}
+//
+//	public int test(List<String> list) {
+//		return 0;
+//	}
 
 
 }

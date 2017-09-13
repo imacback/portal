@@ -10,8 +10,8 @@ import java.util.List;
 public class ArrayListTest {
 
 	public static void main(String[] args) {
-		List<Integer> list1 = new ArrayList<>();
-		List<String> list2 = new LinkedList<>();
+		List<Integer> list1 = new ArrayList<Integer>();
+		List<String> list2 = new LinkedList<String>();
 
 		list1.add(1);
 		list2.add("1");

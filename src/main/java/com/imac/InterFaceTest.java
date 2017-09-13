@@ -5,11 +5,11 @@ package com.imac;
  */
 public interface InterFaceTest {
 
-	static void test() {
-		System.out.println("========");
-	}
-
-	default void test1() {
-
-	}
+//	static void test() {
+//		System.out.println("========");
+//	}
+//
+//	default void test1() {
+//
+//	}
 }
