@@ -19,7 +19,9 @@ public class SyncTest {
 
     static Map<Integer, HashMapTest> map = new ConcurrentHashMap<>();
 
-    public static void main(String[] args) {
+    private static int i = 10;
+
+    public static void main(String[] args) throws Exception {
 
 //        list.add(String.class);
 //        list.add(Integer.class);
@@ -33,28 +35,37 @@ public class SyncTest {
          *  V putIfAbsent(K key, V value)
             如果key对应的value不存在，则put进去，返回null。否则不put，返回已存在的value。
          */
-        HashMapTest h1 = map.putIfAbsent(1,hashMapTest);
-        HashMapTest h2 =  map.putIfAbsent(1,hashMapTest2);
-
-        HashMapTest h3 = map.putIfAbsent(2,hashMapTest3);
-        HashMapTest h4 =  map.putIfAbsent(2,hashMapTest4);
-
-        System.out.println(h1);
-        System.out.println(h2 == hashMapTest);
-
+//        HashMapTest h1 = map.putIfAbsent(1,hashMapTest);
+//        HashMapTest h2 =  map.putIfAbsent(1,hashMapTest2);
+//
+//        HashMapTest h3 = map.putIfAbsent(2,hashMapTest3);
+//        HashMapTest h4 =  map.putIfAbsent(2,hashMapTest4);
+//
+//        System.out.println(h1);
+//        System.out.println(h2 == hashMapTest);
+//
         SyncTest test = new SyncTest();
+//
+//        Thread t2 = new Thread(new TheadTest2(test));
+//        Thread t1 = new Thread(new ThreadTest(test));
+//
+//        t2.start();
+//        t1.start();
 
-        Thread t2 = new Thread(new TheadTest2(test));
-        Thread t1 = new Thread(new ThreadTest(test));
+		for (int j = 0; j < 10; j++) {
+			Thread t1 = new Thread(new ThreadTest(test));
+			t1.start();
+			t1.join();
+		}
 
-        t2.start();
-        t1.start();
-    }
+		System.out.println(i);
+	}
 
     public  void method1() {
     synchronized (map.get(1)) {
         System.out.println(Thread.currentThread().getName() + "access method1");
             try {
+            	--i;
             Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -86,6 +97,7 @@ public class SyncTest {
         @Override
         public void run() {
             System.out.println("t1 start");
+			map.putIfAbsent(1,new HashMapTest());
             test.method1();
             System.out.println("t1 end");
         }
@@ -99,6 +111,7 @@ public class SyncTest {
         @Override
         public void run() {
             System.out.println("t2 start");
+			map.putIfAbsent(2,new HashMapTest());
             try {
                 test.method2();
 //                Thread.sleep(1000);
