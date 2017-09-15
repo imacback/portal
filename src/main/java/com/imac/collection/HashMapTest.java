@@ -5,7 +5,17 @@ import java.util.Map;
 
 public class HashMapTest {
 
-    public static void main(String[] args) {
+	private int num = 1;
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	public static void main(String[] args) {
         Map<Person, String> map = new HashMap<Person, String>();
 
         // 1.8 put时，链表尾部  1.6链表头部

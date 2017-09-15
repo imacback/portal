@@ -46,19 +46,20 @@ public class SyncTest {
 //
         SyncTest test = new SyncTest();
 //
-//        Thread t2 = new Thread(new TheadTest2(test));
-//        Thread t1 = new Thread(new ThreadTest(test));
-//
-//        t2.start();
-//        t1.start();
+        Thread t2 = new Thread(new TheadTest2(test));
+        Thread t1 = new Thread(new ThreadTest(test));
 
-		for (int j = 0; j < 10; j++) {
-			Thread t1 = new Thread(new ThreadTest(test));
-			t1.start();
-			t1.join();
-		}
+		t2.start();
+        t1.start();
 
-		System.out.println(i);
+
+//		for (int j = 0; j < 10; j++) {
+//			Thread t1 = new Thread(new ThreadTest(test));
+//			t1.start();
+//			t1.join();
+//		}
+
+//		System.out.println(i);
 	}
 
     public  void method1() {
@@ -79,8 +80,10 @@ public class SyncTest {
         synchronized (map.get(2)) {
             System.out.println(Thread.currentThread().getName() + " access method2");
             try {
-            Thread.sleep(1000);
-            } catch (InterruptedException e) {
+//            Thread.sleep(500);
+
+            System.out.println("i:" + map.get(1).getNum());
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -97,7 +100,9 @@ public class SyncTest {
         @Override
         public void run() {
             System.out.println("t1 start");
-			map.putIfAbsent(1,new HashMapTest());
+            HashMapTest h1 = new HashMapTest();
+			h1.setNum(10);
+			map.putIfAbsent(1,h1);
             test.method1();
             System.out.println("t1 end");
         }
