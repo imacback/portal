@@ -77,15 +77,28 @@ public class Tree {
 				parent.setRight(current.getLeft());
 			}
 		} else {
+			/**
+			 * 后继结点是delNode的右子节点的左后代
+			 *
+			 * 如查 sunncessor 是要删除结点的右子结点的左后代，执行删除操作需要四个步骤
+			 *
+			 * 1、把 sunncessor 父结点的 leftChild 设置为后继的右子结点
+			 * 2、把 sunncessor 的右子结点设置为 delNode 的右子结点
+			 * 3、把 delNode 从它父结点的右子结点删除，把这个设置为 sunncessor
+			 * 4、把 delNode 的左子结点从要删除结点移除， 后继结点的leftChild设置为delNode的左子结点
+			 *
+			 *
+			 */
+
 			TreeNode sunncessor = getSuccessor(current);
 
 			if (sunncessor == root) {
 				root = sunncessor;
 			} else if(isleft) {
-				parent.setLeft(sunncessor);
+				parent.setLeft(sunncessor); //
 			} else {
-				parent.setRight(sunncessor);
-				sunncessor.setLeft(current.getLeft());
+				parent.setRight(sunncessor); //3、把 delNode 从它父结点的右子结点删除，把这个设置为 sunncessor
+				sunncessor.setLeft(current.getLeft()); //4、把 delNode 的左子结点从要删除结点移除， 后继结点的leftChild设置为delNode的左子结点
 			}
 		}
 
@@ -105,8 +118,8 @@ public class Tree {
 		}
 
 		if (successor != delNode.getRight()) {
-			successorParent.setLeft(successor.getRight());
-			successor.setRight(delNode.getRight());
+			successorParent.setLeft(successor.getRight());  // 1、把 sunncessor 父结点的 leftChild 设置为后继的右子结点
+			successor.setRight(delNode.getRight()); // 2、把 sunncessor 的右子结点设置为 delNode 的右子结点
 		}
 
 		return successor;
