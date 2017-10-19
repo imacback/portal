@@ -22,7 +22,9 @@ public class Main {
 		Integer a = new Integer(100);
 		Integer b = new Integer(100);
 
-		System.out.println(a.getClass() == b.getClass());
+		System.out.println(a.equals(b));
+
+//		System.out.println(a.getClass() == b.getClass());
 //
 //		Long c = 1L;
 //
