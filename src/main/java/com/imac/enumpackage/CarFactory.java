@@ -17,7 +17,13 @@ public enum CarFactory {
 		}
 	}
 
+	private CarFactory() {
+		System.out.println("I am cus");
+	}
+
 	public static void main(String[] args) {
-		Car car = CarFactory.FordCar.createCar();
+		//有几个枚举类型，就会执行几次构造函数
+		System.out.println(CarFactory.FordCar);
+//		Car car = CarFactory.FordCar.createCar();
 	}
 }
