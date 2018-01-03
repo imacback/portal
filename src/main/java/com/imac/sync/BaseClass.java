@@ -5,15 +5,36 @@ package com.imac.sync;
  */
 public class BaseClass {
 
-	public synchronized void dosomething() {
-		System.out.println("in base dosomthing.........");
+	private String str = "123";
 
+	public  void dosomething() {
+//		System.out.println("in base dosomthing.........");
+synchronized(BaseClass.class) {
+
+//}
 		try {
+			System.out.println(Thread.currentThread().getName() + "begin");
 			Thread.sleep(1000);
+			System.out.println(Thread.currentThread().getName() + "end");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
-		System.out.println("out base dosomething...........");
+//		System.out.println("out base dosomething...........");
 	}
+	}
+
+	public synchronized void test1() {
+//		synchronized (str) {
+			try {
+			System.out.println(Thread.currentThread().getName() + "-------begin");
+			Thread.sleep(1000);
+			System.out.println(Thread.currentThread().getName() + "-------end");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+//		}
+
+	}
+
 }

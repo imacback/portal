@@ -5,14 +5,14 @@ package com.imac.sync;
  */
 public class SyncThread1 implements Runnable {
 
-	private ChildClass childClass ;
+	private BaseClass childClass ;
 
-	public SyncThread1(ChildClass childClass) {
+	public SyncThread1(BaseClass childClass) {
 		this.childClass = childClass;
 	}
 
 	@Override
 	public void run() {
-		childClass.childMethod();
+		childClass.test1();
 	}
 }

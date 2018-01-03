@@ -13,6 +13,10 @@ public class Main {
 	public static final int A = new Random().nextInt();
 
     public static void main(String[] args) {
+    	String str = "";
+
+    	System.out.println(str.hashCode());
+
 	// write your code here
 
 //		for (int i=0;;) {
