@@ -59,6 +59,7 @@ public class MyService {
 		t2.setName("threadB");
 
 		t1.start();
+//		t1.start(); 多次调用 start throw java.lang.IllegalThreadStateException 异常
 		t2.start();
 	}
 }
