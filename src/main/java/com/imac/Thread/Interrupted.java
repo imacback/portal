@@ -8,18 +8,23 @@ public class Interrupted {
          Thread sleep = new Thread(new SleepRunner());
          sleep.setDaemon(true);
          Thread busy = new Thread(new BusyRunner());
-         busy.setDaemon(true);
+//         busy.setDaemon(true);
+         busy.setName("busy");
 
-         sleep.start();
+//         sleep.start();
          busy.start();
 
-         Thread.sleep(10000);
+         Thread.sleep(2000);
 
-         sleep.interrupt();
+//         sleep.interrupt();
          busy.interrupt();
 
-         System.out.println(sleep.isInterrupted());
-         System.out.println(busy.isInterrupted());
+//         System.out.println(sleep.isInterrupted());
+//         System.out.println(busy.isInterrupted());
+
+//		System.out.println(sleep.interrupted());
+//		System.out.println(busy.interrupted());
+//		System.out.println(busy.interrupted());
 
          Thread.sleep(1000);
     }
@@ -45,6 +50,9 @@ public class Interrupted {
         @Override
         public void run() {
             while (true) {
+            	if (Thread.currentThread().interrupted()) {
+					System.out.println(Thread.currentThread().getName() + "====");
+				}
 
             }
         }
