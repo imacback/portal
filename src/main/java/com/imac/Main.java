@@ -1,5 +1,7 @@
 package com.imac;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.List;
 import java.util.Random;
 
@@ -14,16 +16,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-    	        String s1 = "Programming";
-        String s2 = new String("Programming");
-        String s3 = "Program" + "ming";
-        System.out.println(s1 == s2);
-        System.out.println(s1 == s3);
-        System.out.println(s1 == s1.intern());
+    	String a = " ";
 
-    	String str = "";
+		System.out.println(StringUtils.isNotBlank(a));
 
-    	System.out.println(str.hashCode());
+//    	        String s1 = "Programming";
+//        String s2 = new String("Programming");
+//        String s3 = "Program" + "ming";
+//        System.out.println(s1 == s2);
+//        System.out.println(s1 == s3);
+//        System.out.println(s1 == s1.intern());
+//
+//    	String str = "";
+//
+//    	System.out.println(str.hashCode());
 
 	// write your code here
 
@@ -31,10 +37,10 @@ public class Main {
 //			System.out.println(i++);
 //		}
 //
-		Integer a = new Integer(100);
-		Integer b = new Integer(100);
+//		Integer a = new Integer(100);
+//		Integer b = new Integer(100);
 
-		System.out.println(a.equals(b));
+//		System.out.println(a.equals(b));
 
 //		System.out.println(a.getClass() == b.getClass());
 //
