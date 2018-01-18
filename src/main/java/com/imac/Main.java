@@ -1,7 +1,5 @@
 package com.imac;
 
-import org.apache.commons.lang.StringUtils;
-
 import java.util.List;
 import java.util.Random;
 
@@ -16,9 +14,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-    	String a = " ";
+    	int i = -5;
 
-		System.out.println(StringUtils.isNotBlank(a));
+    	System.out.println(Integer.toBinaryString(i));
+
+    	String a = "101";
+
+    	System.out.println(Integer.valueOf(a, 16));
+
+//    	String a = " ";
+//
+//		System.out.println(StringUtils.isNotBlank(a));
 
 //    	        String s1 = "Programming";
 //        String s2 = new String("Programming");
