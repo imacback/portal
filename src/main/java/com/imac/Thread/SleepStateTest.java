@@ -1,23 +1,13 @@
 package com.imac.Thread;
 
-public class MyThread extends Thread {
+public class SleepStateTest extends Thread {
 
-	public MyThread()
+	public SleepStateTest()
 	{
-		System.out.println("MyThread5----->Begin");
-		System.out.println("Thread.currentThread().getName()----->" +
-				Thread.currentThread().getName());
-		System.out.println("this.getName()----->" + this.getName());
-		System.out.println("MyThread5----->end");
 	}
 
 	public void run()
 	{
-		System.out.println("run----->Begin");
-		System.out.println("Thread.currentThread().getName()----->" +
-				Thread.currentThread().getName());
-		System.out.println("this.getName()----->" + this.getName());
-		System.out.println("run----->end");
 
 		try {
 			Thread.currentThread().sleep(5000);
@@ -29,11 +19,12 @@ public class MyThread extends Thread {
 
 	public void getS() {
 		System.out.println("thread stata:" + Thread.currentThread().getName() + "))))))))))))))))))))" + Thread.currentThread().getState());
+		// sleep 后线程状态变为 TIMED_WAITING
 		System.out.println("thread stata:" + this.getName() + "==============" + this.getState());
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		MyThread myThread = new MyThread();
+		SleepStateTest myThread = new SleepStateTest();
 		myThread.setName("A");
 		myThread.start();
 		Thread.sleep(2000);
