@@ -4,7 +4,7 @@ import org.apache.commons.lang.StringUtils;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -42,15 +42,16 @@ public class Jsr303Util {
 
 	public static void main(String[] args) {
 		User user = new User();
+		user.setUserName("");
 
 		System.out.println(check(user));
 	}
 
 	static class User {
-		@NotNull(message = "用户名不能为空")
+		@NotEmpty(message = "用户名不能为空")
 		private String userName;
 
-		@NotNull(message = "密码不能为空")
+		@NotEmpty(message = "密码不能为空")
 		private String password;
 
 		public String getUserName() {
