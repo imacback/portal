@@ -14,13 +14,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-    	int i = -5;
+//    	int i = -5;
+//
+//    	System.out.println(Integer.toBinaryString(i));
+//
+//    	String a = "101";
+//
+//    	System.out.println(Integer.valueOf(a, 16));
 
-    	System.out.println(Integer.toBinaryString(i));
-
-    	String a = "101";
-
-    	System.out.println(Integer.valueOf(a, 16));
+//		System.out.println(Integer.toBinaryString(10));
+//    	System.out.println(10 >>> 2);
 
 //    	String a = " ";
 //
@@ -43,8 +46,10 @@ public class Main {
 //			System.out.println(i++);
 //		}
 //
-//		Integer a = new Integer(100);
-//		Integer b = new Integer(100);
+		Integer a = 100;
+		Integer b = 100;
+
+		System.out.println(a == b);
 
 //		System.out.println(a.equals(b));
 
