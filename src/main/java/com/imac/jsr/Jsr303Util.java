@@ -1,9 +1,11 @@
 package com.imac.jsr;
 
 import org.apache.commons.lang.StringUtils;
+import org.hibernate.validator.HibernateValidator;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
+import javax.validation.Validator;
 import javax.validation.constraints.NotEmpty;
 import java.util.Iterator;
 import java.util.Set;
@@ -21,7 +23,11 @@ public class Jsr303Util {
 		if (null == obj) {
 			return "入参vo不能为空";
 		}
-		Set<ConstraintViolation<Object>> validResult = Validation.buildDefaultValidatorFactory().getValidator().validate(obj);
+		//验证其中一项出项返回 failFast
+		Validator validator = Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory().getValidator();
+		//验证所有
+//		Set<ConstraintViolation<Object>> validResult = Validation.buildDefaultValidatorFactory().getValidator().validate(obj);
+		Set<ConstraintViolation<Object>> validResult = validator.validate(obj);
 		if (null != validResult && validResult.size() > 0) {
 			StringBuilder sb = new StringBuilder();
 			for (Iterator<ConstraintViolation<Object>> iterator = validResult.iterator(); iterator.hasNext();) {
