@@ -14,6 +14,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+    	int i = 3;
+
+    	System.out.println(i >> 1);
+    	System.out.println(i + (i >> 1));
+
 //    	int i = -5;
 //
 //    	System.out.println(Integer.toBinaryString(i));
@@ -46,10 +51,10 @@ public class Main {
 //			System.out.println(i++);
 //		}
 //
-		Integer a = 100;
-		Integer b = 100;
-
-		System.out.println(a == b);
+//		Integer a = 100;
+//		Integer b = 100;
+//
+//		System.out.println(a == b);
 
 //		System.out.println(a.equals(b));
 

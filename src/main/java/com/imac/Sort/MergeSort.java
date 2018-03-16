@@ -7,6 +7,7 @@ package com.imac.Sort;
  */
 public class MergeSort {
 
+
 	public static void main(String[] args) {
 
 //		int[] a = {23,47,81,95};
@@ -20,9 +21,9 @@ public class MergeSort {
 //			System.out.print(c[i] + " ");
 //		}
 
-//		int[] a={49,38,65,97,76,13,27,49,78,34,12,64,1,8};
+		int[] a={49,38,65,97,76,13,27,49,78,34,12,64,1,8};
 
-		int[] a={49,38,65};
+//		int[] a={49,38,65,97};
 
 		System.out.println("排序之前：");
 		for (int i = 0; i < a.length; i++) {
